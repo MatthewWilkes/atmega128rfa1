@@ -71,6 +71,7 @@
 <layer number="125" name="_tNames" color="7" fill="1" visible="no" active="yes"/>
 <layer number="144" name="Drill_legend" color="7" fill="1" visible="no" active="yes"/>
 <layer number="151" name="HeatSink" color="7" fill="1" visible="no" active="yes"/>
+<layer number="199" name="Contour" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="200" name="200bmp" color="1" fill="10" visible="no" active="yes"/>
 <layer number="201" name="201bmp" color="2" fill="10" visible="no" active="yes"/>
 <layer number="202" name="202bmp" color="3" fill="10" visible="no" active="yes"/>
@@ -7925,82 +7926,6 @@ Source: 008-0260-0_E.pdf</description>
 </deviceset>
 </devicesets>
 </library>
-<library name="con-coax">
-<packages>
-<package name="LTI-SASF54GT">
-<description>&lt;b&gt;SMA vertical PCB thrue hole jack&lt;/b&gt;&lt;p&gt;
-Source: Lighthorse Technologies, inc. SASF54GT.pdf</description>
-<wire x1="-1.1" y1="3.075" x2="1.1" y2="3.075" width="0.2032" layer="21"/>
-<wire x1="3.075" y1="1.1" x2="3.075" y2="-1.1" width="0.2032" layer="21"/>
-<wire x1="1.1" y1="-3.075" x2="-1.1" y2="-3.075" width="0.2032" layer="21"/>
-<wire x1="-3.075" y1="-1.1" x2="-3.075" y2="1.1" width="0.2032" layer="21"/>
-<wire x1="-3.0749" y1="3.0749" x2="3.075" y2="3.075" width="0.2032" layer="51"/>
-<wire x1="3.075" y1="3.075" x2="3.0749" y2="-3.0749" width="0.2032" layer="51"/>
-<wire x1="3.0749" y1="-3.0749" x2="-3.075" y2="-3.075" width="0.2032" layer="51"/>
-<wire x1="-3.075" y1="-3.075" x2="-3.0749" y2="3.0749" width="0.2032" layer="51"/>
-<circle x="0" y="0" radius="3.0501" width="0.2032" layer="51"/>
-<circle x="0" y="0" radius="1.7" width="0.2032" layer="21"/>
-<pad name="1" x="0" y="0" drill="1.5" diameter="2.2"/>
-<pad name="2" x="-2.54" y="2.54" drill="1.5" diameter="2.2"/>
-<pad name="3" x="2.54" y="2.54" drill="1.5" diameter="2.2"/>
-<pad name="4" x="2.54" y="-2.54" drill="1.5" diameter="2.2"/>
-<pad name="5" x="-2.54" y="-2.54" drill="1.5" diameter="2.2"/>
-<text x="-2.54" y="4.445" size="1.27" layer="25">&gt;NAME</text>
-<text x="-3.175" y="-5.715" size="1.27" layer="27">&gt;VALUE</text>
-</package>
-</packages>
-<symbols>
-<symbol name="BU-BNC">
-<wire x1="-2.54" y1="2.54" x2="-2.54" y2="-2.54" width="0.254" layer="94" curve="-180" cap="flat"/>
-<wire x1="0" y1="-2.54" x2="-0.762" y2="-1.778" width="0.254" layer="94"/>
-<wire x1="0" y1="0" x2="-0.508" y2="0" width="0.1524" layer="94"/>
-<wire x1="-2.54" y1="0.254" x2="-0.762" y2="0.254" width="0.254" layer="94"/>
-<wire x1="-0.762" y1="0.254" x2="-0.508" y2="0" width="0.254" layer="94"/>
-<wire x1="-0.508" y1="0" x2="-0.762" y2="-0.254" width="0.254" layer="94"/>
-<wire x1="-0.762" y1="-0.254" x2="-2.54" y2="-0.254" width="0.254" layer="94"/>
-<text x="-2.54" y="-5.08" size="1.778" layer="96">&gt;VALUE</text>
-<text x="-2.54" y="3.302" size="1.778" layer="95">&gt;NAME</text>
-<pin name="1" x="2.54" y="0" visible="off" length="short" direction="pas" rot="R180"/>
-<pin name="GND" x="2.54" y="-2.54" visible="off" length="short" direction="pwr" rot="R180"/>
-</symbol>
-<symbol name="3GND">
-<wire x1="0" y1="0" x2="0" y2="-5.08" width="0.1524" layer="94"/>
-<text x="0" y="-7.62" size="1.778" layer="95">&gt;NAME</text>
-<pin name="GND@1" x="2.54" y="0" visible="off" length="short" direction="pwr" rot="R180"/>
-<pin name="GND@2" x="2.54" y="-2.54" visible="off" length="short" direction="pwr" rot="R180"/>
-<pin name="GND@3" x="2.54" y="-5.08" visible="off" length="short" direction="pwr" rot="R180"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="LTI-SASF54GT" prefix="X">
-<description>&lt;b&gt;SMA vertical PCB thrue hole jack&lt;/b&gt;&lt;p&gt;
-Source: Lighthorse Technologies, inc. SASF54GT.pdf</description>
-<gates>
-<gate name="G$1" symbol="BU-BNC" x="0" y="0"/>
-<gate name="G" symbol="3GND" x="10.16" y="0" addlevel="request"/>
-</gates>
-<devices>
-<device name="" package="LTI-SASF54GT">
-<connects>
-<connect gate="G" pin="GND@1" pad="3"/>
-<connect gate="G" pin="GND@2" pad="4"/>
-<connect gate="G" pin="GND@3" pad="5"/>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="GND" pad="2"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="MF" value="" constant="no"/>
-<attribute name="MPN" value="" constant="no"/>
-<attribute name="OC_FARNELL" value="unknown" constant="no"/>
-<attribute name="OC_NEWARK" value="unknown" constant="no"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="led">
 <packages>
 <package name="1206">
@@ -9737,6 +9662,65 @@ Source: www.kingbright.com</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="SparkFun-Connectors">
+<description>&lt;h3&gt;SparkFun Electronics' preferred foot prints&lt;/h3&gt;
+In this library you'll find connectors and sockets- basically anything that can be plugged into or onto.&lt;br&gt;&lt;br&gt;
+We've spent an enormous amount of time creating and checking these footprints and parts, but it is the end user's responsibility to ensure correctness and suitablity for a given componet or application. If you enjoy using this library, please buy one of our products at www.sparkfun.com.
+&lt;br&gt;&lt;br&gt;
+&lt;b&gt;Licensing:&lt;/b&gt; CC v3.0 Share-Alike You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
+<packages>
+<package name="U.FL">
+<wire x1="1.3" y1="0.7" x2="1.3" y2="2" width="0.127" layer="21"/>
+<wire x1="1.3" y1="2" x2="-1.3" y2="2" width="0.127" layer="21"/>
+<wire x1="-1.3" y1="-2" x2="1.3" y2="-2" width="0.127" layer="21"/>
+<wire x1="1.3" y1="-2" x2="1.3" y2="-0.7" width="0.127" layer="21"/>
+<wire x1="-1.3" y1="0.7" x2="-1.3" y2="2" width="0.127" layer="21"/>
+<wire x1="-1.3" y1="-2" x2="-1.3" y2="-0.7" width="0.127" layer="21"/>
+<wire x1="1.4" y1="0.7" x2="1.4" y2="2" width="0.127" layer="21"/>
+<wire x1="1.4" y1="-2" x2="1.4" y2="-0.7" width="0.127" layer="21"/>
+<wire x1="1.5" y1="0.7" x2="1.5" y2="2" width="0.127" layer="21"/>
+<wire x1="1.5" y1="-2" x2="1.5" y2="-0.7" width="0.127" layer="21"/>
+<wire x1="1.5" y1="2" x2="1.3" y2="2" width="0.127" layer="21"/>
+<wire x1="1.5" y1="0.7" x2="1.3" y2="0.7" width="0.127" layer="21"/>
+<wire x1="1.5" y1="-0.7" x2="1.3" y2="-0.7" width="0.127" layer="21"/>
+<wire x1="1.5" y1="-2" x2="1.3" y2="-2" width="0.127" layer="21"/>
+<smd name="P$1" x="0" y="1.375" dx="2.2" dy="0.85" layer="1"/>
+<smd name="P$2" x="0" y="-1.375" dx="2.2" dy="0.85" layer="1"/>
+<smd name="P$3" x="1.525" y="0" dx="1.05" dy="1" layer="1"/>
+<smd name="P$4" x="-1.525" y="0" dx="1.05" dy="1" layer="1"/>
+</package>
+</packages>
+<symbols>
+<symbol name="U.FL">
+<wire x1="0" y1="-2.54" x2="0" y2="-7.62" width="0.254" layer="94"/>
+<circle x="0" y="0" radius="1.1359" width="0.254" layer="94"/>
+<circle x="0" y="0" radius="2.54" width="0.254" layer="94"/>
+<pin name="GND@0" x="-2.54" y="-5.08" visible="off" length="short"/>
+<pin name="SIGNAL" x="5.08" y="0" visible="off" length="middle" rot="R180"/>
+<pin name="GND@1" x="-2.54" y="-7.62" visible="off" length="short"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="U.FL">
+<description>SMD antenna connector- WRL-09144</description>
+<gates>
+<gate name="G$1" symbol="U.FL" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="U.FL">
+<connects>
+<connect gate="G$1" pin="GND@0" pad="P$1"/>
+<connect gate="G$1" pin="GND@1" pad="P$2"/>
+<connect gate="G$1" pin="SIGNAL" pad="P$3"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -9789,7 +9773,6 @@ Source: www.kingbright.com</description>
 <part name="PORTF" library="SparkFun" deviceset="M08" device="1X08"/>
 <part name="PORTB" library="SparkFun" deviceset="M08" device="1X08"/>
 <part name="GND20" library="supply1" deviceset="GNDA" device=""/>
-<part name="SMA" library="con-coax" deviceset="LTI-SASF54GT" device="" value=""/>
 <part name="GND7" library="supply1" deviceset="GND" device=""/>
 <part name="RSTON" library="led" deviceset="LED" device="CHIPLED_0603"/>
 <part name="R1" library="rcl" deviceset="R-US_" device="R0603" value="30Ohm"/>
@@ -9820,6 +9803,7 @@ Source: www.kingbright.com</description>
 <part name="GND26" library="supply1" deviceset="GND" device=""/>
 <part name="GND27" library="supply1" deviceset="GND" device=""/>
 <part name="GND22" library="supply1" deviceset="GND" device=""/>
+<part name="U$6" library="SparkFun-Connectors" deviceset="U.FL" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -9870,8 +9854,6 @@ Source: www.kingbright.com</description>
 <instance part="PORTF" gate="G$1" x="220.98" y="50.8" rot="R180"/>
 <instance part="PORTB" gate="G$1" x="220.98" y="119.38" rot="R180"/>
 <instance part="GND20" gate="1" x="78.74" y="55.88" rot="R270"/>
-<instance part="SMA" gate="G$1" x="12.7" y="144.78" rot="R270"/>
-<instance part="SMA" gate="G" x="-7.62" y="144.78"/>
 <instance part="GND7" gate="1" x="30.48" y="71.12" rot="R90"/>
 <instance part="RSTON" gate="G$1" x="111.76" y="99.06" rot="R270"/>
 <instance part="R1" gate="G$1" x="101.6" y="99.06"/>
@@ -9908,6 +9890,7 @@ Source: www.kingbright.com</description>
 <instance part="GND26" gate="1" x="99.06" y="127" rot="R180"/>
 <instance part="GND27" gate="1" x="106.68" y="129.54" rot="R180"/>
 <instance part="GND22" gate="1" x="124.46" y="147.32" rot="R90"/>
+<instance part="U$6" gate="G$1" x="12.7" y="147.32" rot="R270"/>
 </instances>
 <busses>
 </busses>
@@ -10066,9 +10049,6 @@ Source: www.kingbright.com</description>
 <wire x1="30.48" y1="144.78" x2="27.94" y2="144.78" width="0.1524" layer="91"/>
 <wire x1="27.94" y1="144.78" x2="27.94" y2="142.24" width="0.1524" layer="91"/>
 <wire x1="0" y1="121.92" x2="0" y2="111.76" width="0.1524" layer="91"/>
-<wire x1="10.16" y1="142.24" x2="-5.08" y2="142.24" width="0.1524" layer="91"/>
-<wire x1="-5.08" y1="144.78" x2="-5.08" y2="142.24" width="0.1524" layer="91"/>
-<wire x1="-5.08" y1="142.24" x2="-5.08" y2="139.7" width="0.1524" layer="91"/>
 <wire x1="0" y1="121.92" x2="10.16" y2="121.92" width="0.1524" layer="91"/>
 <wire x1="10.16" y1="121.92" x2="10.16" y2="142.24" width="0.1524" layer="91"/>
 <wire x1="25.4" y1="129.54" x2="27.94" y2="129.54" width="0.1524" layer="91"/>
@@ -10076,20 +10056,21 @@ Source: www.kingbright.com</description>
 <wire x1="10.16" y1="121.92" x2="30.48" y2="121.92" width="0.1524" layer="91"/>
 <wire x1="30.48" y1="121.92" x2="30.48" y2="129.54" width="0.1524" layer="91"/>
 <wire x1="27.94" y1="142.24" x2="27.94" y2="129.54" width="0.1524" layer="91"/>
-<junction x="-5.08" y="142.24"/>
-<junction x="-5.08" y="144.78"/>
-<junction x="-5.08" y="139.7"/>
-<junction x="10.16" y="142.24"/>
 <junction x="10.16" y="121.92"/>
 <junction x="27.94" y="129.54"/>
 <junction x="27.94" y="142.24"/>
 <pinref part="GND9" gate="1" pin="GNDA"/>
 <pinref part="B1" gate="G$1" pin="GNDDC"/>
-<pinref part="SMA" gate="G$1" pin="GND"/>
-<pinref part="SMA" gate="G" pin="GND@2"/>
-<pinref part="SMA" gate="G" pin="GND@1"/>
-<pinref part="SMA" gate="G" pin="GND@3"/>
 <pinref part="C4" gate="G$1" pin="2"/>
+<wire x1="10.16" y1="142.24" x2="0" y2="142.24" width="0.1524" layer="91"/>
+<wire x1="0" y1="142.24" x2="0" y2="154.94" width="0.1524" layer="91"/>
+<pinref part="U$6" gate="G$1" pin="GND@1"/>
+<wire x1="0" y1="154.94" x2="5.08" y2="154.94" width="0.1524" layer="91"/>
+<wire x1="5.08" y1="154.94" x2="5.08" y2="149.86" width="0.1524" layer="91"/>
+<pinref part="U$6" gate="G$1" pin="GND@0"/>
+<wire x1="5.08" y1="154.94" x2="7.62" y2="154.94" width="0.1524" layer="91"/>
+<wire x1="7.62" y1="154.94" x2="7.62" y2="149.86" width="0.1524" layer="91"/>
+<junction x="5.08" y="154.94"/>
 </segment>
 <segment>
 <wire x1="114.3" y1="55.88" x2="86.36" y2="55.88" width="0.1524" layer="91"/>
@@ -10168,8 +10149,8 @@ Source: www.kingbright.com</description>
 <wire x1="-5.08" y1="101.6" x2="0" y2="101.6" width="0.1524" layer="91"/>
 <junction x="12.7" y="129.54"/>
 <pinref part="C4" gate="G$1" pin="1"/>
-<pinref part="SMA" gate="G$1" pin="1"/>
 <pinref part="B1" gate="G$1" pin="IN"/>
+<pinref part="U$6" gate="G$1" pin="SIGNAL"/>
 </segment>
 </net>
 <net name="N$12" class="0">
